@@ -26,9 +26,6 @@ body {
     transition: transform 0.3s ease;
 }
 
-.container:hover {
-    transform: translateY(-5px);
-}
 
 .header {
     background: linear-gradient(135deg, #1a2a6c, #2a4c7d, #3a6c9d);
@@ -282,10 +279,6 @@ body {
 }
 
 @media (max-width: 480px) {
-    .container {
-        border-radius: 0;
-    }
-    
     .header, .form-container {
         padding: 20px;
     }
