@@ -1,0 +1,7 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Envelope with checkmark -->
+    <rect x="20" y="40" width="80" height="60" rx="8" fill="#2A4C7D"/>
+    <path d="M20 40 L60 20 L100 40" fill="#1A2A6C"/>
+    <rect x="30" y="50" width="60" height="40" rx="4" fill="white"/>
+    <path d="M45 75 L55 85 L75 65" stroke="#4CAF50" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

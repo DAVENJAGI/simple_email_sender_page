@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Engineering Department</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="icon" rel="image/svg+xml" href="./icon.svg">
+    <script type="text/javascript" src="./scripts/index.js"></script>
+</head>
+<body>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <div class="header-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h1>Contact Engineering Department</h1>
+                <p>Quick and easy way to send emails to our engineering team</p>
+            </div>
+        </div>
+        
+        <div class="form-container">
+            <form id="emailForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="name" class="form-control" placeholder="Enter your full name" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="regNumber">Registration Number</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-id-card input-icon"></i>
+                        <input type="text" id="regNumber" class="form-control" placeholder="Enter your registration number" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="attemptType">Attempt Type</label>
+                    <div class="select-container">
+                        <select id="attemptType" class="form-control" required>
+                            <option value="first-attempt">First Attempt</option>
+                            <option value="supplementary">Supplementary</option>
+                            <option value="retake">Retake</option>
+                        </select>
+                        <i class="fas fa-chevron-down select-arrow"></i>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Message Preview</label>
+                    <div class="message-preview" id="messagePreview">
+                        Your message will appear here as you fill out the form...
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn">
+                    <i class="fas fa-paper-plane"></i> Send Email
+                </button>
+            </form>
+            
+            <div class="info-box">
+                <h3><i class="fas fa-info-circle"></i> How it works</h3>
+                <p>Simply enter your name and registration number, choose the type of attempt, then click the button to automatically generate and send an email to the Engineering Department. It redirects you to a preloaded email screen, all you have to do is click send. No additional typing required. Peace out engineers🙂✌️</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
