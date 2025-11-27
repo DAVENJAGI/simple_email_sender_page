@@ -16,12 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         messagePreview.textContent = message;
     }
 
-    function getAttemptText() {
-        const selectedOption = attemptType.options[attemptType.selectedIndex];
-        return selectedOption ? selectedOption.text : '[Your Attempt Type]';
-    }
-
-    function openGmailCompose() {
+    function openEmailClient() {
         const name = nameInput.value;
         const regNumber = regNumberInput.value;
         const attempt = getAttemptText();
@@ -34,18 +29,35 @@ document.addEventListener('DOMContentLoaded', function() {
         const recipient = 'engineering@mku.ac.ke';
         const subject = `Physical Electronics II Request - ${name} (${regNumber})`;
         
-        const body = `Dear Engineering Department,\n\nMy name is ${name}, Registration Number: ${regNumber}. I am writing to request that Physical Electronics II be on offer upcoming January/May as it is a pending unit for me as a ${attempt}.\n Your consideration will be highly appreciated.\n\nThank you for your time and consideration.\n\nSincerely,\n${name}\n${regNumber}`;
+        const body = `Dear Engineering Department,\n\nMy name is ${name}, Registration Number: ${regNumber}. I am writing to request that Physical Electronics II be on offer upcoming January/May as it is a pending unit for me as a ${attempt}.Your consideration will be highly appreciated.\n\nThank you for your time and consideration.\n\nSincerely,\n${name}\n${regNumber}`;
 
-        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(recipient)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-        window.open(gmailUrl, '_blank');
+        const mailtoLink = document.createElement('a');
+        mailtoLink.href = mailtoUrl;
+        mailtoLink.style.display = 'none';
+        document.body.appendChild(mailtoLink);
+        
+        mailtoLink.click();
 
-        alert('Compose window opened! Please review and send the email.');
+        setTimeout(() => {
+            const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(recipient)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.open(gmailUrl, '_blank');
+        }, 500);
+
+        setTimeout(() => {
+            document.body.removeChild(mailtoLink);
+        }, 1000);
+    }
+
+    function getAttemptText() {
+        const selectedOption = attemptType.options[attemptType.selectedIndex];
+        return selectedOption ? selectedOption.text : '[Your Attempt Type]';
     }
 
     emailForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        openGmailCompose();
+        openEmailClient();
     });
 
     nameInput.addEventListener('input', updateMessagePreview);
